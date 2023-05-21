@@ -6,7 +6,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
     private Node root;
     private int size;
 
-    public void put(K key, V value) {
+    public void put(K key, V value) { //Inserts a key-value pair into the binary search tree
         root = put(root, key, value, null);
     }
 
@@ -28,7 +28,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
         return node;
     }
 
-    public V get(K key) {
+    public V get(K key) { //Retrieves the value associated with the given key from the binary search tree.
         Node node = get(root, key);
         return node != null ? node.value : null;
     }
@@ -48,15 +48,15 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
         }
     }
 
-    public int size() {
+    public int size() { //Returns the number of elements (key-value pairs) stored in the binary search tree.
         return size;
     }
 
-    public Iterator<Entry> iterator() {
+    public Iterator<Entry> iterator() { //Returns an iterator over the elements in the binary search tree
         return new BSTIterator();
     }
 
-    private class Node {
+    private class Node { //Represents a node in the binary search tree
         private K key;
         private V value;
         private Node parent;
@@ -70,7 +70,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
         }
     }
 
-    public class Entry<K, V> {
+    public class Entry<K, V> { //Represents a key-value pair
         public K key;
         public V value;
 
@@ -80,7 +80,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
         }
     }
 
-    private class BSTIterator implements Iterator<Entry<K, V>> {
+    private class BSTIterator implements Iterator<Entry<K, V>> { //Implements the iterator for the binary search tree
         private Node current;
         private Node next;
 
@@ -99,7 +99,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
             return next != null;
         }
 
-        public Entry<K, V> next() {
+        public Entry<K, V> next() { // Returns the next key-value pair in the iteration
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
@@ -110,7 +110,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
             return new Entry<>(current.key, current.value);
         }
 
-        private Node findSuccessor(Node node) {
+        private Node findSuccessor(Node node) { //finds the successor node of a given node
             if (node.right != null) {
                 node = node.right;
                 while (node.left != null) {
