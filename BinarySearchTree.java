@@ -125,5 +125,40 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
             }
         }
     }
+    /*
+    public Node findHeight(Node node) {
+        do {
+            if (node.right != null) {
+                node = node.right;
+                int count = 0;
+                while (node.right != null) {
+                    count++;
+                }
 
+            } else {
+                return node.left;
+            }
+            if (node.left != null) {
+                node = node.left;
+                int count2 = 0;
+                while (node.left != null) {
+                    count2++;
+                }
+            } else {
+                return node.right;
+            }
+        }
+        while (node.right != null || node.left != null){
+            if (int count > int count2){
+                System.out.println(count);
+            }
+            if (count < count2) {
+                System.out.println(count2);
+            }
+            else {
+                System.out.println(count);
+            }
+        }
+    }
+    */
 }
