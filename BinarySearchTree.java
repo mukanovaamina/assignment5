@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<BinarySearchTree.Entry<K, V>> {
+public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<BinarySearchTree<K, V>.Entry<K, V>> {
 
     private Node root;
     private int size;
@@ -52,7 +52,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
         return size;
     }
 
-    public Iterator<Entry> iterator() { //Returns an iterator over the elements in the binary search tree
+    public Iterator<Entry<K, V>> iterator() { //Returns an iterator over the elements in the binary search tree
         return new BSTIterator();
     }
 
@@ -125,4 +125,5 @@ public class BinarySearchTree<K extends Comparable<K>, V> implements Iterable<Bi
             }
         }
     }
+
 }

@@ -7,7 +7,7 @@ public class Main {
         tree.put(1, "Suga");
         tree.put(3, "Felix");
 
-        for (BinarySearchTree.Entry<Integer, String> entry : tree) {
+        for (BinarySearchTree.Entry entry : tree) {
             System.out.println("Key is " + entry.key + " and value is " + entry.value);
         }
     }
